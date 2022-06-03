@@ -1,0 +1,104 @@
+﻿@model IEnumerable<mah9.Models.VideoModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+    @if (User.IsInRole("Admin") || User.IsInRole("Student"))
+    {
+        <p>
+            @Html.ActionLink("Create New", "CreateVideo", "Video")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.VideoURL)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VideoName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VideoSubject)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VideoClass)
+                </th>
+                <th>
+
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+               
+                if (User.IsInRole("Admin"))
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VideoURL)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VideoName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VideoSubject)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VideoClass)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.VideoID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.VideoID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.VideoID })
+                    </td>
+                </tr>
+                }
+            }
+
+        </table>
+
+    }
+
+        <head>
+            <style>
+                .eyad img {
+                    border-radius: 25px;
+                    transition: 0.3s;
+                }
+
+                    .eyad img:hover {
+                        transform: scale(1.03,1.03);
+                    }
+            </style>
+        </head>
+        <body>
+
+        
+
+            @foreach (var item in ViewBag.ClassName)
+            {
+                if (User.IsInRole(item.Value) || User.IsInRole("Admin"))
+                {
+
+                <h2>@item.Value</h2>
+                <hr />
+                    foreach (var i in Model)
+                    {
+                        if (User.IsInRole(i.VideoSubject) || User.IsInRole("Admin"))
+                        {
+                            if (i.VideoClass == item.Value)
+                            {
+                    <div class="eyad">
+                        <a href="@Url.Action("Watch", "Video", new { id = i.VideoID })" class="elements"><img src="https://vumbnail.com/@i.VideoURL+.jpg" alt="" width="350" height="150"></a>
+                    </div>
+                            }
+                        }
+                    }
+
+                }
+            }
+
+        </body>
+

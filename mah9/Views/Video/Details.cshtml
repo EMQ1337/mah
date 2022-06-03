@@ -1,0 +1,65 @@
+﻿@model mah9.Models.VideoModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VideoModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt style="font-size : large">
+            @Html.DisplayNameFor(model => model.VideoID)
+        </dt>
+
+        <dd style="font-size : large">
+            @Html.DisplayFor(model => model.VideoID)
+        </dd >
+
+
+        <dt style="font-size : large">
+            @Html.DisplayNameFor(model => model.VideoName)
+        </dt >
+
+        <dd style="font-size : large">
+            @Html.DisplayFor(model => model.VideoName)
+        </dd >
+        <dt style="font-size : large">
+            @Html.DisplayNameFor(model => model.VideoURL)
+        </dt>
+
+        <dd style="font-size : large">
+            @Html.DisplayFor(model => model.VideoURL)
+        </dd>
+        <dt style="font-size : large">
+            @Html.DisplayNameFor(model => model.VideoSubject)
+        </dt>
+
+        <dd style="font-size : large">
+            @Html.DisplayFor(model => model.VideoSubject)
+        </dd>
+
+        <dt style="font-size : large">
+            @Html.DisplayNameFor(model => model.VideoClass)
+        </dt>
+
+        <dd style="font-size : large">
+            @Html.DisplayFor(model => model.VideoClass)
+        </dd>
+
+        <dt style="font-size : large">
+            @Html.DisplayName("Date of Creation")
+        </dt>
+
+        <dd style="font-size : large"> 
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VideoID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

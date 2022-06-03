@@ -1,0 +1,184 @@
+﻿@model mah9.Models.StudentModel
+
+@{
+    ViewBag.Title = "Delete Student";
+}
+
+<h2>Delete Student</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.FullName)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.FullName)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.PhoneNumber)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.PhoneNumber)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Class)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Class)
+    </dd>
+
+
+
+    <dt >
+        @Html.DisplayName("Subjects")
+    </dt>
+
+    <dd >
+        @Html.DisplayFor(model => model.Role)
+    </dd>
+
+
+
+    <dt >
+        @Html.DisplayName("User is a")
+    </dt>
+
+    <dd >
+        @Html.DisplayFor(model => model.userroless)
+    </dd>
+
+
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Email)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Email)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.PasswordHash)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.PasswordHash)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.UserId)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.UserId)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.SecurityStamp)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.SecurityStamp)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.PhoneNumberConfirmed)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.PhoneNumberConfirmed)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.twofac)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.twofac)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.lockout)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.lockout)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.lockoutend)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.lockoutend)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Username)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Username)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.AcecssFailed)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.AcecssFailed)
+    </dd>
+
+ 
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Password)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Password)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.SeconID)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.SeconID)
+    </dd>
+
+</dl>
+    <div class="form-group">
+        @Html.LabelFor(model => model.SeconID, htmlAttributes: new { style = "display: none;", @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.SeconID, new { htmlAttributes = new { style = "display: none;", @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.SeconID, "", new { style = "display: none;", @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="DELETE" class="btn btn-danger" onclick="return confirm('Are you sure you want to DELETE the user : @Model.FullName')" />
+        </div>
+    </div>
+</div>
+
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,79 @@
+﻿
+
+@model mah9.Models.SubjectModel
+
+@{
+    ViewBag.Title = "Delete Subject";
+}
+
+<h2>Delete Subject.</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.subjectID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.subjectID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.subject)
+        </dd>
+    </dl>
+        <div class="form-group">
+            @Html.LabelFor(model => model.subjectID, htmlAttributes: new { style = "display: none;", @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.subjectID, new { htmlAttributes = new { style = "display: none;", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.subjectID, "", new { style = "display: none;", @class = "text-danger" })
+
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.subject, htmlAttributes: new { style = "display: none;", @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.subject, new { htmlAttributes = new { style = "display: none;", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.subject, "", new { style = "display: none;", @class = "text-danger" })
+
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Oldsubject, htmlAttributes: new { style = "display: none;", @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Oldsubject, new { htmlAttributes = new { style = "display: none;", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Oldsubject, "", new { style = "display: none;", @class = "text-danger" })
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="DELETE" class="btn btn-danger" onclick="return confirm('Are you sure you want to DELETE the Class : @Model.subject')" />
+            </div>
+        </div>
+    </div>
+
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

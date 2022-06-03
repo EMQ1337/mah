@@ -1,0 +1,41 @@
+﻿@model IEnumerable<mah9.Models.SubjectModel>
+@{
+    ViewBag.Title = "Subject";
+}
+
+    <h2>Subject List</h2>
+
+<p>
+    @Html.ActionLink("Create New Subject", "CreateSubject", "Subject")
+</p>
+
+<style type="text/css">
+
+
+    tr:hover {
+        background-color: rgba(196, 196, 196, 0.46);
+    }
+</style>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.subject)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.subject)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.subjectID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.subjectID }) 
+               
+            </td>
+        </tr>
+    }
+    
+</table>

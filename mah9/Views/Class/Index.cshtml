@@ -1,0 +1,45 @@
+﻿@model IEnumerable<mah9.Models.ClassModel>
+
+@{
+    ViewBag.Title = "Classes";
+}
+
+<h2>Classes List.</h2>
+
+<style type="text/css">
+
+
+    tr:hover {
+        background-color: rgba(196, 196, 196, 0.46);
+    }
+
+</style>
+
+<p>
+    @Html.ActionLink("Create New Class", "CreateClass", "Class")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ClassName)
+        </th>
+        <th>
+
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClassName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ClassID }) |
+                
+                @Html.ActionLink("Delete", "Delete", new { id = item.ClassID })
+            </td>
+        </tr>
+    }
+
+</table>

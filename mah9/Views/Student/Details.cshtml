@@ -1,0 +1,164 @@
+﻿@model mah9.Models.StudentModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Student Details.</h2>
+
+<div>
+
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt style="font-size : large">
+            @Html.DisplayName("Date of Creation")
+        </dt>
+
+        <dd style="font-size : large">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+
+        <dt style="font-size : large">
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd style="font-size : large">
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt style="font-size : large">
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd style="font-size : large">
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt style="font-size : large">
+            @Html.DisplayNameFor(model => model.Class)
+        </dt>
+
+        <dd style="font-size : large">
+            @Html.DisplayFor(model => model.Class)
+        </dd>
+        <dt style="font-size : large">
+            @Html.DisplayName("Subjects")
+        </dt>
+
+        <dd style="font-size : large">
+            @Html.DisplayFor(model => model.Role)
+        </dd>
+
+
+
+
+        <dt style="font-size : large">
+            @Html.DisplayName("User is a")
+        </dt>
+
+        <dd style="font-size : large">
+            @Html.DisplayFor(model => model.userroless)
+        </dd>
+
+
+
+
+
+        <dt style="font-size : large">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd style="font-size : large">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt style="font-size : large">
+            @Html.DisplayName("ID")
+        </dt>
+
+        <dd style="font-size : large">
+            @Html.DisplayFor(model => model.SeconID)
+        </dd>
+
+
+        <dt style="font-size : large">
+            @Html.DisplayName("Master ID")
+        </dt>
+
+        <dd style="font-size : large">
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+        <dt style="font-size : large">
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd style="font-size : large">
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+
+
+
+        <dt style="font-size : large">
+            @Html.DisplayNameFor(model => model.twofac)
+        </dt>
+
+        <dd style="font-size : large">
+            @Html.DisplayFor(model => model.twofac)
+        </dd>
+
+        <dt style="font-size : large">
+            @Html.DisplayNameFor(model => model.lockout)
+        </dt>
+
+        <dd style="font-size : large">
+            @Html.DisplayFor(model => model.lockout)
+        </dd>
+
+
+
+
+        <dt style="font-size : large">
+            @Html.DisplayNameFor(model => model.AcecssFailed)
+        </dt>
+
+        <dd style="font-size : large">
+            @Html.DisplayFor(model => model.AcecssFailed)
+        </dd>
+
+
+
+
+
+
+        <dt style="font-size : large">
+            @Html.DisplayNameFor(model => model.PasswordHash)
+        </dt>
+
+        <dd style="font-size : large">
+            @Html.DisplayFor(model => model.PasswordHash)
+        </dd>
+        <dt style="font-size : large">
+            @Html.DisplayNameFor(model => model.SecurityStamp)
+        </dt>
+
+        <dd style="font-size : large">
+            @Html.DisplayFor(model => model.SecurityStamp)
+        </dd>
+
+
+    </dl>
+
+    <p>
+        @Html.ActionLink("Edit this user", "Edit", new { id = Model.SeconID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+</div>  <div class="form-group">
+    @Html.LabelFor(model => model.SeconID, htmlAttributes: new { style = "display: none;", @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.SeconID, new { htmlAttributes = new { style = "display: none;", @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.SeconID, "", new { style = "display: none;", @class = "text-danger" })
+    </div>
+</div>

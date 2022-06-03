@@ -1,0 +1,95 @@
+﻿@model IEnumerable<mah9.Models.StudentModel>
+
+@{
+    ViewBag.Title = "Student List";
+}
+
+<h2>Students List.</h2>
+<style type="text/css">
+ 
+
+    tr:hover {
+        background-color: rgba(196, 196, 196, 0.46);
+        
+    }
+
+
+ 
+</style>
+
+
+
+<p>
+    @Html.ActionLink("Add New Student", "Register", "Account")
+</p>
+<table class="table">
+    <tr class="row">
+        <th>
+            @Html.DisplayName("Name")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Class)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+
+
+
+
+
+
+        <th>
+            @Html.DisplayName("Subjects")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayName("ID")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr class="row">
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Class)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+
+
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Role)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeconID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.SeconID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.SeconID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.SeconID }) |
+                @Html.ActionLink("Delete Subject", "Delsub", new { id = item.SeconID }) |
+                @Html.ActionLink("Add Subject", "AddSub", new { id = item.SeconID })
+            </td>
+        </tr>
+    }
+
+</table>
